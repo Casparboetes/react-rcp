@@ -1,19 +1,17 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import HeartGrey from '../images/heart-grey.svg'
 import HeartRed from '../images/heart-red.svg'
 import './LikeButton.css'
 
 class LikeButton extends PureComponent {
-    constructor() {
-    super()
-
-    this.state = {
-      liked: false
-    }
+  static propTypes = {
+    onchange: PropTypes.func.isRequired,
+    liked: PropTypes.bool.isRequired,
   }
 
   classNames() {
-    const { liked } = this.state
+    const { liked } = this.props
     let classes = 'like'
 
     if (liked) { classes += ' liked' }
@@ -21,15 +19,18 @@ class LikeButton extends PureComponent {
     return classes
   }
 
+  //  toggleLike() {
+//   this.setState({
+//   })
+// }
+
   toggleLike() {
-    this.setState({
-      liked : !this.state.liked
-    })
+    this.props.onChange()
     console.log('Like button clicked!')
   }
 
   render() {
-    const { liked } = this.state
+    const { liked } = this.props
     return (
       <div className={ this.classNames() }>
         <button onClick={ this.toggleLike.bind(this) }>
