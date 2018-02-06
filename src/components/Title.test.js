@@ -7,7 +7,7 @@ describe('with a different content prop', () => {
 
   it('has a wrapping h1 tag', () => {
    expect(title).toHaveTagName('h1')
- })
+  })
 
   it('renders a different title text', () => {
     expect(title).toHaveText('Something Completely Different!')
