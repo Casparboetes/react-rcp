@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Titillium+Web|Ubuntu");
 .Title {
   font-size: 4rem;
   text-align: center;
-  color: #0074D9; }
+  color: #383961;
+  margin-top: auto;
+  font-family: 'Titillium Web', sans-serif; }

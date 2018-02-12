@@ -5,7 +5,7 @@ import sinon from 'sinon'
 
 describe('<LikeButton />', () => {
   const toggleLike = sinon.spy()
-  const button = shallow(<LikeButton liked={false} onChange={toggleLike} />)
+  const button = shallow(<LikeButton liked={false} onClick={toggleLike} />)
 
   it('is wrapped in a div with class "like"', () => {
     expect(button).toHaveTagName('div')
@@ -13,7 +13,7 @@ describe('<LikeButton />', () => {
   })
 
   describe('clicking the button', () => {
-    it('calls "onChange"', () => {
+    it('calls "onClick"', () => {
       button.find('button').simulate('click')
       expect(toggleLike.callCount).toBe(1)
     })
@@ -24,7 +24,7 @@ describe('<LikeButton />', () => {
 
 // describe('<LikeButton />', () => {
 //   const toggleLike = sinon.spy()
-//   const button = shallow(<LikeButton liked={false} onchange={toggleLike} />)
+//   const button = shallow(<LikeButton liked={false} onClick={toggleLike} />)
 //
 //   it('is wrapped in a div with a class "like"', () => {
 //     expect(button).toHaveTagName('div')
@@ -36,7 +36,7 @@ describe('<LikeButton />', () => {
 //   })
 //
 //   describe('clicking the button', () => {
-//     it('calls "onChange"', () => {
+//     it('calls "onClick"', () => {
 //       button.find('button').simulate('click')
 //       expect(toggleLike.callCount).toBe(1)
 //     })

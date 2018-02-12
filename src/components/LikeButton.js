@@ -6,8 +6,9 @@ import './LikeButton.css'
 
 class LikeButton extends PureComponent {
   static propTypes = {
-    onchange: PropTypes.func.isRequired,
-    liked: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
+    liked: PropTypes.bool,
+    //onClick: PropTypes.func.isRequired,
   }
 
   classNames() {
@@ -19,21 +20,12 @@ class LikeButton extends PureComponent {
     return classes
   }
 
-  //  toggleLike() {
-//   this.setState({
-//   })
-// }
-
-  toggleLike() {
-    this.props.onChange()
-    console.log('Like button clicked!')
-  }
-
   render() {
-    const { liked } = this.props
+    // onClick can be inserted below in const
+    const { liked, onClick  } = this.props
     return (
       <div className={ this.classNames() }>
-        <button onClick={ this.toggleLike.bind(this) }>
+        <button onClick={ onClick }>
           <img className="heart" alt="heart" src={ liked ? HeartRed : HeartGrey } />
           <span className="copy">
           <img className="heart" alt="heart" src={ liked ? HeartRed : HeartGrey } />
@@ -42,7 +34,6 @@ class LikeButton extends PureComponent {
           <span className="likes">{ liked ? 'You like this' : null }
           </span>
       </div>
-
     )
   }
 }

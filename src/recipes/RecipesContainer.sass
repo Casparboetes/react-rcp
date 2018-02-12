@@ -1,0 +1,42 @@
+@import "../themes/colors.sass"
+@import "../themes/breakpoint.sass"
+
+.recipeTitle
+  color: $red
+
+header.renderHeader
+  background-color: $lightBlue
+  height: 120px
+  padding: 15px
+  border-bottom: 1rem solid $red
+
+div.wrapper
+  margin: 0 auto
+  width: 100%
+
+main.renderMain
+  margin: 0 auto
+  display: flex
+  flex-direction: column
+  background-color: $oaker
+  filter: opacity(0.75)
+
+  @include breakpoint($breakpoint-large)
+  max-width: 1260px
+  flex-flow: row wrap
+
+  @include breakpoint($breakpoint-medium)
+    flex-flow: row wrap
+
+  @include breakpoint($breakpoint-small)
+    min-width: 100%
+
+  &> header
+  display: flex
+  flex-direction: column
+  margin: 0 auto
+  flex: 2 100%
+
+footer.renderFooter
+  background-color: $red
+  height: 1rem

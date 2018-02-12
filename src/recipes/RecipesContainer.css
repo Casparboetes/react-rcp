@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Titillium+Web|Ubuntu");
+.recipeTitle {
+  color: #DB162F; }
+
+header.renderHeader {
+  background-color: #5F758E;
+  height: 120px;
+  padding: 15px;
+  border-bottom: 1rem solid #DB162F; }
+
+div.wrapper {
+  margin: 0 auto;
+  width: 100%; }
+
+main.renderMain {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFEEB9;
+  filter: opacity(0.75);
+  max-width: 1260px;
+  flex-flow: row wrap;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  flex: 2 100%; }
+  @media (min-width: 769px) {
+    main.renderMain {
+      flex-flow: row wrap; } }
+  @media (min-width: 415px) {
+    main.renderMain {
+      min-width: 100%; } }
+
+footer.renderFooter {
+  background-color: #DB162F;
+  height: 1rem; }
