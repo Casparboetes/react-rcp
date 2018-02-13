@@ -23,7 +23,6 @@ export class RecipePage extends PureComponent {
     this.props.fetchRecipeById(this.props.match.params.recipeId)
   }
 
-
   render() {
     const { _id, photo, title, summary, vegan, vegetarian, pescatarian, liked } = this.props
 
@@ -32,15 +31,14 @@ export class RecipePage extends PureComponent {
     return(
       <div className="recipe page">
         <Title content={ title } />
-        { _id }
+        <span className="idRecipePage">{ _id }</span>
         { photo }
-        { summary }
-        { summary }
+        <h2> { summary }</h2>
         { vegan }
         { vegetarian }
         { pescatarian }
         { liked }
-    
+
       </div>
     )
   }

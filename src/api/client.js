@@ -67,11 +67,6 @@ export default class ApiClient {
     return !!this.getToken()
   }
 
-  // Create a full URL to our API, including the host and path
-  // createUrl(path) {
-  //   return [this.host, path].join('/')
-  // }
-
   getToken() {
     return localStorage.getItem(this.options.tokenStorageKey)
   }
@@ -80,10 +75,21 @@ export default class ApiClient {
     localStorage.setItem(this.options.tokenStorageKey, token)
   }
 
+  signOut() {
+    localStorage.removeItem(this.options.tokenStorageKey)
+  }
+
+
+  // Create a full URL to our API, including the host and path
+  // createUrl(path) {
+  //   return [this.host, path].join('/')
+  // }
+  //
   // createUrl(path) {
   //   return `${process.env.HOST || `http://localhost:${process.env.PORT || 3030}`}${path}`
   //     .replace(/\/\//g, '/')
   // }
+  //
   createUrl(path) {
     return `${this.host}${path}`
   }

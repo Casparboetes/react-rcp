@@ -6,6 +6,7 @@ import RecipeItem, { recipeItemShape } from './RecipeItem'
 import RecipeEditor from './RecipeEditor'
 import { fetchRecipes } from '../actions/recipes/fetch'
 import './RecipesContainer.css'
+import Navigation from '../components/Navigation'
 
 class RecipesContainer extends PureComponent {
   static propTypes = {
@@ -31,6 +32,7 @@ class RecipesContainer extends PureComponent {
     return(
       <div className="recipes wrapper">
         <header className="renderHeader">
+        <Navigation />
           <Title content="All Recipes" />
         </header>
         <main className="renderMain">

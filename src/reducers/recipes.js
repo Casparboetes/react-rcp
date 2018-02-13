@@ -56,11 +56,11 @@ export default (state = recipes, { type, payload } = {}) => {
     case FETCHED_ONE_RECIPE :
       return [payload].concat(state)
 
-    case 'TOGGLE_LIKE_RECIPE' :
-      return state.map((recipe) => {
-        if (recipe._id !== payload) return recipe
-        return { ...recipe, liked: !recipe.liked }
-      })
+    // case 'TOGGLE_LIKE_RECIPE' :
+    //   return state.map((recipe) => {
+    //     if (recipe._id !== payload) return recipe
+    //     return { ...recipe, liked: !recipe.liked }
+    //   })
 
     default :
         return state

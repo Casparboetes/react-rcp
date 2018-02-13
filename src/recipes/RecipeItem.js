@@ -48,13 +48,16 @@ class RecipeItem extends PureComponent {
     return(
           <article className="recipe">
             <header>
+        
               <h1 className="recipeTitle">
-                <Link  to={`/recipes/${_id}`}>
-                { title }
-                </Link>
+              { title }
               </h1>
 
+              <Link  to={`/recipes/${_id}`}>
+
               <div className="cover" style={{ backgroundImage: `url('${photo}')` }} />
+              </Link>
+
               <ul>
                 { pescatarian && <li><img style={{ height : '4em' }} src={ Pescatarian } alt="pescatarian"/></li>  }
                 { vegan && <li><img style={{ height : '4em' }} src={ Vegan } alt="vegan"/></li> }
