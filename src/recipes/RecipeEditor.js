@@ -127,4 +127,4 @@ class RecipeEditor extends PureComponent {
   }
 }
 
-export default connect(null, { createRecipe })(RecipeEditor)
+export default connect(null, {createRecipe })(RecipeEditor)
